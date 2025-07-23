@@ -5,7 +5,9 @@
     <img src="./img/bannerbaguazera.png" alt="">
 </div>
 <div class="titulo" >
+    <div class="linebranca" ></div>
 <h3>PRINCIPAIS OBRAS</h3>
+    <div class="linebranca" ></div>
 </div>
 <div class="soumdetalhe"></div>
 <div class="produtos" >
@@ -31,7 +33,9 @@
     <img src="./img/bannerbaguazera3.png" alt="">
 </div>
 <div id="cord" class="titulo" >
+    <div class="linebranca" ></div>
 <h3>LIVROS</h3>
+<div class="linebranca" ></div>
 </div>
 <div class="soumdetalhe"></div>
 <div class="produtos" >
@@ -97,6 +101,12 @@ const produtosVisiveisOfertas = computed(() => {
 
 <style scoped>
 
+.linebranca {
+    width: 20vw;
+    height: 1px;
+    background-color: #ffffff;
+}
+
 .tudo {
     display: flex;
     justify-content: center;
@@ -106,12 +116,13 @@ const produtosVisiveisOfertas = computed(() => {
 
 .titulo {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 20px;
     background-color: #111d29;
     height: 4.5rem;
-    width: 1250px;
+    width: 100%;
+    max-width: 1250px;
     margin-bottom: 30px;
 }
 
@@ -120,12 +131,14 @@ const produtosVisiveisOfertas = computed(() => {
 }
 
 .titulo h3 {
-    font-size: 30px;
+    font-size: 26px;
     color: white;
 }
 
 .produtos {
-    width: 1300px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .nome-preco-imagem {
@@ -233,6 +246,7 @@ const produtosVisiveisOfertas = computed(() => {
     justify-items: center;
     padding: 4px;
     position: relative;
+    gap: 10px;
 }
 
 .mostrar-mais {
@@ -254,25 +268,51 @@ const produtosVisiveisOfertas = computed(() => {
 }
 
 .soumdetalhe {
-    width: 1250px;
+    width: 100%;
+    max-width: 1250px;
     height: 1px;
     background-color: #888888;
+    margin: 0 auto;
 }
 
 .comercial img {
-    width: 1250px;
+    width: 100%;
+    max-width: 1250px;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+    .lista {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 950px) {
+    .lista {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 700px) {
     .lista {
         grid-template-columns: repeat(2, 1fr);
     }
+    .titulo, .soumdetalhe, .comercial img, .produtos {
+        max-width: 98vw;
+    }
 }
-
-@media (max-width: 568px) {
+@media (max-width: 480px) {
     .lista {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+    .produto {
+        width: 95vw;
+        min-width: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    .titulo, .soumdetalhe, .comercial img, .produtos {
+        max-width: 100vw;
     }
 }
 

@@ -169,9 +169,36 @@ onUnmounted(() => {
     position: relative;
     overflow: hidden;
     background-color: rgba(240, 240, 240, 0.438);
-    height: 49vh;
+    height: 45vh;
     min-height: 300px;
     width: 100%;
+}
+
+@media (max-width: 1300px) {
+    .banner {
+        max-width: 98vw;
+    }
+}
+@media (max-width: 900px) {
+    .banner {
+        min-height: 180px;
+        height: 32vw;
+        max-width: 100vw;
+    }
+}
+@media (max-width: 650px) {
+    .banner {
+        min-height: 120px;
+        height: 28vw;
+        max-width: 100vw;
+    }
+}
+@media (max-width: 480px) {
+    .banner {
+        min-height: 80px;
+        height: 22vw;
+        max-width: 100vw;
+    }
 }
 
 .carousel-wrapper {
@@ -196,8 +223,9 @@ onUnmounted(() => {
 
 .img1 {
     width: 100%;
-    height: 95%;
+    height: 90%;
     object-position: center;
+    background-size: cover;
 }
 
 .nav {
